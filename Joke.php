@@ -1,28 +1,28 @@
 <?php
+
 namespace Kristopher\Chistesdev;
 
+use Exception;
 use GuzzleHttp\Client;
 
 class Joke
 {
     protected $client;
 
-    public function __construct(Client $client)
+    public function get(): string
     {
-        $this->client = $client;
-    }
+        $client = new Client();
 
-    public function getRandomJoke()
-    {
-        $response = $this->client->request('GET', 'https://backend-omega-seven.vercel.app/api/getjoke');
+        $res = $client->request('GET', 'https://backend-omega-seven.vercel.app/api/getjoke');
 
-        $joke = json_decode($response->getBody()->getContents());
+        if ($res->getStatusCode() !== 200) {
+            throw new Exception("could not fetch joke");
+        }
 
-        return $joke->value->joke;
+        $joke = json_decode($res->getBody());
+
+        return $joke->joke;
     }
 }
-
-
-
 
 
