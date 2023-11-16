@@ -1,0 +1,20 @@
+{
+    "name": "kristopher/chistesdev",
+    "description": "Retorna un chiste aleatorio de programación.",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "7.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kristopher\\Chistesdev\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "kristopherjafeth",
+            "email": "kristopherjafeth@gmail.com"
+        }
+    ]
+}
