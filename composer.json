@@ -2,8 +2,9 @@
     "name": "kristopher/chistesdev",
     "description": "Retorna un chiste aleatorio de programación.",
     "type": "library",
+    "version": "1.0.0",
     "require": {
-        "guzzlehttp/guzzle": "7.4"
+        "guzzlehttp/guzzle": "7.8"
     },
     "license": "MIT",
     "autoload": {
