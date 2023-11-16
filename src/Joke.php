@@ -21,7 +21,9 @@ class Joke
 
         $joke = json_decode($res->getBody());
 
-        return $joke->joke;
+
+
+        return $joke[0];
     }
 }
 
