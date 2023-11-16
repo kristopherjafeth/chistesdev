@@ -19,11 +19,12 @@ class Joke
             throw new Exception("could not fetch joke");
         }
 
-        $joke = json_decode($res->getBody());
+        $jokes = json_decode($res->getBody());
+
+        $joke = $jokes[0]->question . '<br/><br/> ' . $jokes[0]->punchline;
 
 
-
-        return $joke[0];
+        return $joke;
     }
 }
 
